@@ -1,0 +1,41 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="polymer-redux-example-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[loading]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'polymer-redux-example-app',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'polymer-redux-example-app',
+        },
+        loading: {
+          type: Boolean,
+          value: false
+        }
+      },
+      ready: function () {
+        this.unsubscribe = store.subscribe(() => {
+            this.loading = store.getState().inboxReducer.loading;
+          }
+        );
+        inboxActions.fetchMessages();
+      },
+      detached: function () {
+        this.unsubscribe();
+      }
+
+    });
+  </script>
+</dom-module>

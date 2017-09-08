@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>polymer-redux-example</title>
+    <meta name="description" content="polymer-redux-example description">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="/node_modules/redux/dist/redux.js"></script>
+    <script src="/node_modules/redux-thunk/dist/redux-thunk.js"></script>
+    <script src="/src/redux/actions/inboxActions.js"></script>
+    <script src="/src/redux/reducers/inboxReducer.js"></script>
+    <script src="/src/redux/store/createStore.js"></script>
+    <link rel="import" href="/src/polymer-redux-example-app/polymer-redux-example-app.html">
+  </head>
+  <body>
+    <polymer-redux-example-app></polymer-redux-example-app>
+  </body>
+</html>
